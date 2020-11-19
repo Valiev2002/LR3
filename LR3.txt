@@ -1,0 +1,124 @@
+#include<iostream>
+#include<cmath>
+#include<vector>
+#include<string>
+//zad 1
+using namespace std;
+int main()
+{
+    int   arr[10];
+    for (int i = 0; i < 10; ++i)
+    {
+       arr[i] =  rand()% 21 - 10;
+        cout <<arr[i] << endl;
+    }
+    cout <<arr[8]- arr[5]-arr[2] << endl;
+
+
+    //zad2
+    int n;
+    int *arr2 = new int[n];
+    if (n <= 10)
+        cout << "enter a new symbol" << endl;
+    else
+        cout << "enter with length n=11" << endl;
+    for (int i = 0; i < n; ++i)
+        cin >> arr2[i];
+    for (int i = 0; i < n; ++i) {
+        cout << arr2[i] << "";
+        if(arr2[i]%2==0) pow (arr2[i],2);
+        cout<<arr2[i]<<" ";	// четные значения в квадрат
+        cout<<endl;
+        for(int i=0;i<n;++i)cout<<arr2[i]<<"";//задание 2 пункт 3 вроде
+        cout<<endl;
+}
+
+    int k1, k2;
+    int a=0;
+    cout<<"enter k1 and k2"<<endl;
+    cin>>k1>>k2;
+    for (int i=k1;i<=k2;i++){
+        a+=arr[k1];
+    }
+    cout<<"Sum: "<<a<<endl;
+
+    //zad3
+    int m;
+    int g;
+    cout << "enter the length of array" << endl;
+    cin >> m;
+    vector<int> vec1;
+    for (int i = 0; i < m; ++i) {
+        cin >> a;
+        vec1.insert(vec1.end(), g);
+    }
+
+    for(int i=0; i<m; i++)
+    {
+        cout<<vec1[i]<<" ";
+    }
+    cout<<endl;
+    vec1.push_back(4);
+    for (int i=0; i<vec1.size();i++) {
+        cout<<vec1[i]<<" ";
+    }
+    cout<<endl;
+    int sum=0;
+    for (int i=0;i<vec1.size();i++){
+        sum+=(vec1[i]);
+    }
+    cout<<(sum*1.0/vec1[vec1.size()-1])<<endl;
+
+    long w=0;
+    w=vec1.size();
+    for (long i=0;i<vec1.size();i++){
+        if (vec1[i]>=0) {
+            vec1.erase(vec1.begin()+i);
+            i=w;
+        }
+    }
+    for (int i=0; i<vec1.size();i++) {
+        cout<<vec1[i]<<" ";
+    }
+
+
+
+//zad4
+string line, q;
+cout<<"enter line"<<endl;
+cin.ignore(10,'\n');
+getline(cin, line);
+int b=0;
+for (int i=0;i<line.size();i++)
+if (line[i]=='w') w++;
+cout<<"the length of line"<<line.size()<<endl<<"proportion of b in the line "<< (w*1.0/line.size())<<endl;
+int l1 = 0, l2 = 0;
+cout<<"enter l1 and l2"<<endl;
+cin>>l1>>l2;
+q=line.substr(l1,l2);
+cout<<q<<endl;
+
+
+cout<<endl;
+cout << "enter change" << std::endl;
+string line2 = "Can you can a can as a canner can can a can";
+string line3;
+getline(std::cin, line3);
+string strc = "can";
+while (line2.find(strc) != string::npos)
+{
+auto pos = line2.find(strc);
+line2.erase(pos, strc.size());
+line2.insert(pos, line3);
+}
+strc = "Can";
+if ((line3[0] >= 97) && (line3[0] <= 122)) line3[0] -= 32;
+while (line2.find(strc) != string::npos)
+{
+auto pos = line2.find(strc);
+line2.erase(pos, strc.size());
+line2.insert(pos, line3);
+}
+cout << line2<<endl;
+return 0;
+}
