@@ -114,9 +114,9 @@ int main() {
         S2.push_back(' ');
         for (int i=0;i<4;i++)
         {
-            int point;
-            point = S.find("can ");
-            S.replace(point,4,S2);
+            int y;
+            y = S.find("can ");
+            S.replace(y,4,S2);
         }
         cout << S << endl;
         return 0;
