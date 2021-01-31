@@ -75,7 +75,6 @@ int main() {
     cout << "Task 4"<<endl;
 string s;
 cout<<"Enter string"<<endl;
-cin.ignore(10,'\n');
 getline(cin,s);
 cout<<s<<endl;
  cout<<"length is "<<s.length()<<endl;
