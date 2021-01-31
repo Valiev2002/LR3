@@ -97,7 +97,6 @@ cout<<s<<endl;
             s = "Can you can a can as a canner can can a can?";
             cout << "Enter your word: ";
             string S2;
-            cin.ignore(10, '\n');
             getline(cin, S2);
             s.replace(s.find("can?"), 3, S2);
             s.replace(s.find("Can"), 3, S2);
