@@ -1,5 +1,4 @@
-#include <iostream>
-#include<cstdlib>
+ #include <iostream>
 #include <ctime>
 #include <cmath>
 #include <vector>
@@ -20,24 +19,29 @@ int main() {
     int n;
     cout << "Enter n (n>10): ";
     cin>>n;
-    int *d_arr = new int[10];
-    for (int i = 0; i < 10; ++i)
-        cin >> d_arr[i];
-    for (int i = 0; i < 10; ++i) {
-        cout << d_arr[i] << " ";
-        if (d_arr[i] % 2 != 0)
-            d_arr[i] = d_arr[i] * 2;
+    int *d_arr = new int[n];
+    if (n>=10) {
+        for (int i = 0; i < n; ++i)
+            cin >> d_arr[i];
+        for (int i = 0; i < n; ++i) {
+            cout << d_arr[i] << " ";
+            if (d_arr[i] % 2 != 0)
+                d_arr[i] = d_arr[i] * 2;
+        }
+        for (int i = 0; i < n; ++i)
+            cout << d_arr[i] << " " << endl;
     }
-    for (int i = 0; i < 10; ++i)
-        cout << d_arr[i] << " " << endl;
+    else {
+        cout << "Error" << endl;
+    }
     cout << "Enter k1 and k2" << endl;
     int k1;
     int k2;
     int sum=0;
     cin >> k1;
     cin >> k2;
-     for (int i = k1 - 1; i <= k2 - 1; i++) {
-        sum += d_arr[i];
+    for (int i = k1 - 1; i <= k2 - 1; i++) {
+        sum =k1+k2;
     }
     cout << "sum=" << sum << endl;
     delete[] d_arr;
@@ -47,11 +51,11 @@ int main() {
     cin >> m;
     vector<int> Vec(m);
     for (int h = 0; h < m; h++) {
-       cin >> Vec[h];
+        cin >> Vec[h];
     }
     for (int h: Vec)
         cout << h << " ";
-  cout << "\n";
+    cout << "\n";
     Vec.push_back(3);
     for (int h: Vec)
         cout << h << " ";
@@ -73,40 +77,40 @@ int main() {
     }
     cout <<endl;
     cout << "Task 4"<<endl;
-string s;
-cout<<"Enter string"<<endl;
-getline(cin,s);
-cout<<s<<endl;
- cout<<"length is "<<s.length()<<endl;
- int counter=0;
-    string w126="AEOUIYaeoui";//потому что mercedes w126 легенда
-    cout<<"Proportion is "<<"\n";
-    size_t found=s.find_first_of(w126); //Поиск по строке s для первого символа, который соответствует любому элементу строки w126
-    while (found!=-1)
-    {
-        counter++;
-        found=s.find_first_of(w126,found+1);
-    }
-    cout << counter << endl;
-            int l1, l2;
-            cout << "l1: " << endl;
-            cin >> l1;
-            cout << "l2: ";
-            cin >> l2;
-            cout << s.substr(l1 - 1, l2 - l1 + 1) << endl;
-            s = "Can you can a can as a canner can can a can?";
-            cout << "Enter your word: ";
-            string S2;
-            getline(cin, S2);
-            s.replace(s.find("can?"), 3, S2);
-            s.replace(s.find("Can"), 3, S2);
-            S2.push_back(' ');
-            for (int i = 0; i < 4; i++) {
-                int point;
-                point = s.find("can ");
-                s.replace(point, 4, S2);
-            }
-            cout << s << std::endl;
-            return 0;
+    cout << "Enter string" << endl;
+    string st;
+    cin.ignore(10,'\n');
+    getline(cin, st);
+    cout << "length is " << st.length() << endl;
+    // proportion
+    int counter= 0;
+    for (int i = 0; i < st.size(); ++i) {
+        if ('a' == st[i] || st[i]== 'A' || st[i]== 'i' || st[i]== 'I' || st[i]== 'o' || st[i]== 'O' || st[i]== 'y' || st[i]== 'Y' || st[i]== 'e' || st[i]=='E')
+        {
+            counter++;
         }
-
+        cout << "proportion is "<<counter*1.0/st.size()<<endl;
+    }
+    int l1, l2;
+    cout<<"Enter l1 and l2"<< endl;
+    cin>> l1>> l2;
+    cout<< st.substr(l1, l2 - l1 + 1)<<endl;
+     std::string s = "Can you can a can as a canner can can a can?";
+    s[0] = 'c';
+    std::cout<< s<< std::endl;
+    std::cout<< "Enter a substitution"<<std::endl;
+    std::string str = "can";
+    std::string word;
+    std::cin>>word;
+    int ps = 0;
+    while (s.find(str, ps) != std::string::npos)
+    {
+        int pos = s.find(str, ps);
+        if (s[pos + str.size()] == ' ' || s[pos + str.size()] == '?') {
+            s.replace(pos, str.size(), word);
+        }
+        ps = pos + 1;
+    }
+    std::cout<<s <<std::endl;
+    return 0;
+}
