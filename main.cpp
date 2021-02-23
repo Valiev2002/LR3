@@ -34,16 +34,12 @@ int main() {
     else {
         cout << "Error" << endl;
     }
-    cout << "Enter k1 and k2" << endl;
-    int k1;
-    int k2;
-    int sum=0;
-    cin >> k1;
-    cin >> k2;
-    for (int i = k1 - 1; i <= k2 - 1; i++) {
-        sum =k1+k2;
-    }
-    cout << "sum=" << sum << endl;
+    std::cout << "Enter k1 and k2" << std::endl;
+    int k1, k2;
+    std::cin >> k1 >> k2;
+    int sum = 0;
+    for (int i = k1; i <= k2; ++i) sum += d_arr[i];
+    std::cout << "summa ravna " << sum << std::endl;
     delete[] d_arr;
     cout << "Task 3" << endl;
     cout << "Enter m>5" << endl;
@@ -83,13 +79,13 @@ int main() {
     getline(cin, st);
     cout << "length is " << st.length() << endl;
     // proportion
-    int counter= 0;
+   float counter=0.0;
     for (int i = 0; i < st.size(); ++i) {
         if ('a' == st[i] || st[i]== 'A' || st[i]== 'i' || st[i]== 'I' || st[i]== 'o' || st[i]== 'O' || st[i]== 'y' || st[i]== 'Y' || st[i]== 'e' || st[i]=='E')
         {
             counter++;
         }
-        cout << "proportion is "<<counter*1.0/st.size()<<endl;
+        cout << "proportion is "<<counter/st.size()<<endl;
     }
     int l1, l2;
     cout<<"Enter l1 and l2"<< endl;
