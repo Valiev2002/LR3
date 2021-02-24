@@ -34,12 +34,18 @@ int main() {
     else {
         cout << "Error" << endl;
     }
-    std::cout << "Enter k1 and k2" << std::endl;
-    int k1, k2;
-    std::cin >> k1 >> k2;
+    int k1=0;
+    std::cout << "Enter k1 " << std::endl;
+    std::cin >> k1;
+    int k2=0;
+    std::cout << "Enter k2 " << std::endl;
+    std::cin>> k2;
     int sum = 0;
-    for (int i = k1; i <= k2; ++i) sum += d_arr[i];
-    std::cout << "summa ravna " << sum << std::endl;
+    for (int i = k1; i <= k2; i++)
+    {
+        sum += d_arr[i];
+    }
+    std::cout << "Summary is " << sum << std::endl;
     delete[] d_arr;
     cout << "Task 3" << endl;
     cout << "Enter m>5" << endl;
