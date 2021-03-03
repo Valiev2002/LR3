@@ -89,7 +89,7 @@ int main() {
     // proportion
    float counter=0.0;
    for ( int i =0;i < st.size();++i) {
-        if ('a' == st[i] || st[i]== 'A' || st[i]== 'i' || st[i]== 'I' || st[i]== 'o' || st[i]== 'O' || st[i]== 'y' || st[i]== 'Y' || st[i]== 'e' || st[i]=='E')
+        if ('a' == st[i] || st[i]== 'A' || st[i]== 'i' || st[i]== 'I' || st[i]== 'o' || st[i]== 'O' || st[i]== 'y' || st[i]== 'Y' || st[i]== 'e' || st[i]=='E'|| st[i]== 'u' || st[i]=='U')
         {
         }
     }
