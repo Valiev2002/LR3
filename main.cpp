@@ -5,6 +5,7 @@
 #include <string>
 using namespace std;
 int main() {
+
     srand(time(nullptr));
     cout << "Task 1" << endl;
     int arr[10];
@@ -78,6 +79,7 @@ int main() {
         cout << h << " ";
     }
     cout <<endl;
+
     cout << "Task 4"<<endl;
     cout << "Enter string" << endl;
     string st;
@@ -86,13 +88,13 @@ int main() {
     cout << "length is " << st.length() << endl;
     // proportion
    float counter=0.0;
-    for (int i = 0; i < st.size(); ++i) {
+   for ( int i =0;i < st.size();++i) {
         if ('a' == st[i] || st[i]== 'A' || st[i]== 'i' || st[i]== 'I' || st[i]== 'o' || st[i]== 'O' || st[i]== 'y' || st[i]== 'Y' || st[i]== 'e' || st[i]=='E')
         {
-            counter++;
         }
-        cout << "proportion is "<<counter/st.size()<<endl;
     }
+    counter++;
+    cout << "proportion is  "<<counter/st.size()<<endl;
     int l1, l2;
     cout<<"Enter l1 and l2"<< endl;
     cin>> l1>> l2;
